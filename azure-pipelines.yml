@@ -16,7 +16,7 @@ steps:
   displayName: 'Terraform : azurerm init'
   inputs:
     command: init
-    workingDirectory: main.tf
+    workingDirectory: System.DefaultWorkingDirectory
     backendServiceArm: 'Evaluación gratuita (7a0892bc-8344-4892-a03c-06e61fa9b61f)'
     backendAzureRmResourceGroupName: terraformbackend
     backendAzureRmStorageAccountName: terraformbackend00
@@ -27,10 +27,11 @@ steps:
   displayName: 'Terraform : azurerm plan'
   inputs:
     command: plan
-    workingDirectory: main.tf
+    workingDirectory: System.DefaultWorkingDirectory
     environmentServiceNameAzureRM: 'Evaluación gratuita (7a0892bc-8344-4892-a03c-06e61fa9b61f)'
 - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
   displayName: 'Terraform : azurerm apply'
   inputs:
     command: apply
+    workingDirectory: System.DefaultWorkingDirectory
     environmentServiceNameAzureRM: 'Evaluación gratuita (7a0892bc-8344-4892-a03c-06e61fa9b61f)'
